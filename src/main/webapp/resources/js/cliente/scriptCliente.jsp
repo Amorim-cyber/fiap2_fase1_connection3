@@ -1,15 +1,14 @@
 <script>
 
 function guardarCliente(){
-	let nome = document.getElementById("nomeCliente");
-	let celular = document.getElementById("celularCliente");
+	let nome = document.getElementById("name");
+	let celular = document.getElementById("celular");
 	
 	if(nome.value!="" && celular.value!="" ){
-		let botaoCadastro = document.getElementById("cadastro");
-		let botaoComanda = document.getElementById("comanda");
-		botaoCadastro.disabled = true;
-		botaoComanda.disabled = false;
-		botaoComanda.click();
+		let cadastro = document.getElementById("cadastro");
+		let comanda = document.getElementById("comanda");
+		cadastro.setAttribute("style","display:none;")
+		comanda.setAttribute("style","display:block;")
 	}
 	
 }

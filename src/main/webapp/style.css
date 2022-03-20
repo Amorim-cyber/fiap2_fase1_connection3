@@ -1,0 +1,140 @@
+@font-face {
+    font-family: inter;
+    src: url(resources/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+
+html, body {
+    height: 100%;
+}
+
+h2{
+    font-weight: bolder !important;
+}
+
+.panel{
+    height: 100% !important;
+    font-family: inter;
+}
+
+.bg-gray{
+    background-color: #FAFAFA;
+}
+
+.content-pane{
+    margin-top: 10% !important;
+    position: relative;
+}
+
+.prime-pane{
+    margin-top: 2% !important;
+}
+
+.img-pane{
+    background-image: url('resources/img/onboard.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 180px;
+}
+
+.tel-pane{
+    position: relative;
+}
+
+.frm-telefone{
+    position: absolute;
+    bottom: 0;
+}
+
+.frm-check{
+    position: absolute;
+    bottom: 0;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+}
+.form__field {
+    font-family: inter;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #000;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #000;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+button{
+    border: 1px solid #000 !important;
+}
+
+button:hover{
+    background-color: #f2f2f2;
+}
+
+.client-pane{
+    margin-top: 10% !important;
+}
+
+.historico-pane{
+    border: 1px solid #000;
+    padding: 20px;
+}
+
+.item{
+    text-decoration: underline;
+}
+
+@media (max-width: 992px)
+{
+    .frm-telefone{
+        position: relative;
+        margin-top: 10%;
+        padding-bottom: 10%;
+    }    
+    .frm-check{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 10%;
+    }
+}

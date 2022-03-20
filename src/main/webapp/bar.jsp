@@ -20,77 +20,76 @@ request.setAttribute("analista",analista);
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="http://localhost:8084/BarProject/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://localhost:8084/BarProject/resources/css/bootstrap-icons-1.5.0/bootstrap-icons.css">
-<title>Bar-Project</title>
+<link rel="stylesheet" href="./style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="./resources/js/jquery-3.6.0.min.js"></script>
+<script src="./resources/js/jquery.mask.min.js"></script>
+<title>DRINK.IT</title>
 </head>
 <body>
+
+	<nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-brand mb-0 h1"><img src="./resources/img/logo.png" /></span>
+        </div>
+    </nav>
+
+    <div class="container-fluid panel">
+        <div class="panel row">
+        	<form class="col-lg-5 col-sm-12 bg-gray" action="comanda" method="post">
+                <div class="row content-pane">
+                    <div class="col-lg-6 col-sm-12 img-pane">
+                        
+                    </div>
+                    
+                    <div class="col-lg-5 col-sm-12 tel-pane">
+                        <div class="frm-telefone">
+                            <div class="form__group field">
+                                <input ${cliente != null? "readonly" : ""} value="${celular}" type="input" class="form__field" placeholder="Digite o telefone" name="tel" id='tel' required />
+                                <label for="tel" class="form__label">Digite o telefone</label>
+                            </div>
+                            
+                        </div>  
+                                         
+                    </div>
+                    
+                    <div style="${cliente != null? 'display:none;' : 'display:flex;'} flex-direction: row; justify-content: flex-end; margin-top: 20px; margin-right: 20px;">
+                    	<button type="submit" class="btn btn-default ml-auto" style=" margin-top: 10px; margin-right: 30px;">
+		                            BUSCAR
+		                </button> 
+                    
+                    </div>
+                    
+                    
+                    <%@ include file="./dashboard/dashboard.jsp" %>
+                    
+                    
+                </div>
+            </form>
+            
+            <form action="conta" method="post" class="col-lg-7 col-sm-12">
+            
+            <%@ include file="./cadastro/cadastro.jsp" %>
+            <%@ include file="./comanda/comanda.jsp" %>
+            
+            </form>
+            
+        </div>
+    </div>
 	
-	<div id="main" style="padding:20px;">
-		<form action="http://localhost:8084/BarProject/comanda" method="post">
-			<div class="input-group mb-3" style="width:550px;">
-			  <input name="celular" type="number" class="form-control" placeholder="Digite aqui o celular do cliente (ddd+número)" aria-label="Recipient's username" aria-describedby="button-addon2">
-			  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Pesquisar</button>
-			</div>
-		</form>
-		<br>
-		<form action="http://localhost:8084/BarProject/conta" method="post">
-		<div class="accordion" id="accordionFlushExample">
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingOne">
-			    	<button ${cliente == null && celular!=null? "" : "disabled"} id="cadastro" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-				        	#1 Cadastro (Novo cliente)
-				     </button>
-			    </h2>
-			    <div id="flush-collapseOne" class="accordion-collapse collapse ${cliente == null && celular!=null? 'show' : ''}" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-			      <div style="padding:20px;" class="accordion-body">
-			      	<%@ include file="./cadastro/cadastro.jsp" %>
-			      </div>
-			    		  
-			    </div>
-			  </div>
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingTwo">
-			    
-			    	<button ${cliente != null? "" : "disabled"} id="dashboard" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-					        #2 DashBoard
-					</button>
-			    
-			    </h2>
-			    
-			    <div id="flush-collapseTwo" class="accordion-collapse collapse ${cliente != null? 'show' : ''}" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-					<div class="accordion-body">
-					<%@ include file="./dashboard/dashboard.jsp" %>
-					</div>
-				</div>
-			    
-			    
-			  </div>
-			  <div class="accordion-item">
-			    <h2 class="accordion-header" id="flush-headingThree">
-			    
-			    	<button id="comanda" ${cliente == null? "disabled" : ""}  class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-					        #3 Comanda
-					</button>
-			    
-			      
-			    </h2>
-			    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-			      <div style="padding:20px;" class="accordion-body">
-			      		<%@ include file="./comanda/comanda.jsp" %>
-			      		
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			</form>
-	</div>
 	
+	<script>
+        $(function() {
+            $('#tel').mask('(00)00000-0000');
+            $('#cpf').mask('000.000.000-00');
+        });
+    </script>
 
 	<%@ include file="./resources/js/bebidas/scriptBebidas.jsp" %>
 	<%@ include file="./resources/js/cliente/scriptCliente.jsp" %>
 	
 	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
+    
 </body>
 </html>

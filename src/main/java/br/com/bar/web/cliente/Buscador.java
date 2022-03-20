@@ -24,9 +24,9 @@ public class Buscador extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("celular", request.getParameter("celular"));
+		request.setAttribute("celular", request.getParameter("tel"));
 		
-		request.setAttribute("cliente", clienteService.find(request.getParameter("celular")));
+		request.setAttribute("cliente", clienteService.find(request.getParameter("tel")));
 		
 		request.getRequestDispatcher("bar.jsp").forward(request, response);
 	}

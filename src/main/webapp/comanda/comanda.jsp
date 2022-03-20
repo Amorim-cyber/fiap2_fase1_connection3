@@ -1,5 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="card" style="padding:10px;">
+
+<div id="comanda" ${cliente != null? "" : "style='display:none;'"} >
+	<div  class="card" style="padding:10px;" >
 						  <div class="card-body" >
 						    <select class="form-select" id="listaBebidas" aria-label="Bebidas" onchange="atualizarBebida()">
 							  <option selected>-</option>
@@ -15,7 +17,7 @@
 						  
 						  
 						  <br>
-						  <button onclick="inserirBebida()" type="button" style="width:100px; height:50px" class="btn btn-primary">Adicionar</button>
+						  <button type="button" onclick="inserirBebida()" style="width:100px; height:50px" class="btn btn-default ml-auto">Adicionar</button>
 						  <br>
 						  
 						  
@@ -46,5 +48,10 @@
 						  	</div>
 						  <br>
 						  	
-						  		<input value="Fechar conta" type="submit" style="width:150px; height:50px" class="btn btn-danger">
+						  		<input value="Fechar conta" type="submit" style="width:150px; height:50px" class="btn btn-danger"/>
 						</div>
+</div>
+
+
+
+

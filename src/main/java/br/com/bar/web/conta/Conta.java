@@ -38,11 +38,11 @@ public class Conta extends HttpServlet {
 		
 		ClienteDAO cliente = new ClienteDAO(
 				0,
-				request.getParameter("nomeCliente"),
-				request.getParameter("celularCliente"),
-				request.getParameter("cpfCliente"),
-				request.getParameter("emailCliente"),
-				request.getParameter("sexoCliente")
+				request.getParameter("name"),
+				request.getParameter("celular"),
+				request.getParameter("cpf"),
+				request.getParameter("email"),
+				request.getParameter("genero")
 				);
 		
 		ClienteDAO clienteBanco = clienteService.find(cliente.getCelular());
