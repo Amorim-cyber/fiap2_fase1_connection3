@@ -52,6 +52,72 @@ O Cliente obrigatoriamente terá uma comanda no momento que entra no estabelecim
 
 
 <hr>
+<h3>Funcionalidades</h3>
 
-<h3>Funcionalidade</h3>
+* <b>Busca utilizando o telefone como chave</b>
 
+  Logo na página principal haverá um campo do qual o atendente deverá colocar o telefone. O programa irá buscar o cliente na base de dados que possua este telefone.
+
+  <img src="assets/telaPrincipal.PNG">
+
+  
+
+  Caso o atendente encontre-o, o site vai mostrar o seu `dashboard` de analise e a tela de `comanda` para registrar os seus pedidos. Caso contrario o site vai mostrar a tela de `Cadastro`. Explico mais detalhadamente <a href="assets/buscaCliente.mp4" >neste vídeo</a>. 
+
+
+
+* <b>Cadastra cliente</b>
+
+  Na tela de `cadastro` o atendente deve preencher os campos para registrar o cliente. Os campos nome e telefone são obrigatórios. Ao preenche-los o site passa para a tela de `comanda` para registrar os pedidos deste novo cliente.
+
+  <img src="assets/cadastro.PNG">
+
+  
+
+  <a href="assets/cadastro.mp4" >Neste vídeo</a> explico melhor.
+
+  
+
+* <b>Registra pedidos</b>
+
+  A tela `comanda` controla o consumo do cliente. Primeiramente o atendente busca o que ele deseja por meio do campo de seleção que já puxa todas as bebidas registradas no banco. Ao selecionar a bebida os campos abaixo mostram mais informações sobre o produto. A medida que o atendente adiciona os pedidos, eles vão ficando armazenados dentro de um elemento rolavel que vai mostrando cada item e o seu somatório. Caso haja algum equivoco no pedido sempre há a opção de remove-lo da listagem.
+
+  <img src="assets/comanda.PNG">
+
+  
+
+  <a href="assets/comanda.mp4" >Neste vídeo</a> ilustro o caso.
+
+
+
+* <b>Analise Dashboard</b>
+
+  A medida que o cliente vai frequentando o estabelecimento o site vai guardando suas preferencias a fim de torna o atendimento cada vez mais personalizado. O `dashboard` retorna para o atendente dados importantes sobre o cliente, conforme solicitado pela atividade, a tela mostra os seguintes aspectos:
+
+  * <b>A data da última visita ao estabelecimento.</b>
+
+  * <b>A frequência de visitas.</b>
+
+  * <b>O ticket médio (valor médio gasto no estabelecimento).</b>
+
+  * <b>A bebida e o estilo (cervejas IPA, Pilsen etc.) favoritos </b>.
+
+    
+
+  <img src="assets/dashboard.PNG">
+
+
+
+<hr>
+
+<h3>Considerações finais</h3>
+
+O projeto está rodando em server local na porta 8084
+
+Futuramente devo deixar esse projeto para ser visto em cloud por meio do heroku, ainda estudando a ideia.
+
+<h4><a href="https://github.com/Amorim-cyber/fiap2_fase1_connection3">CLICK AQUI PARA VER O PROJETO NO GITHUB</a></h4>
+
+<h4>Forte Abraço!!</h4>
+
+ 
