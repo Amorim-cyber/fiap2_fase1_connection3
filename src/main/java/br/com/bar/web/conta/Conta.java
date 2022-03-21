@@ -49,6 +49,10 @@ public class Conta extends HttpServlet {
 		
 		if(clienteBanco==null) {
 			clienteService.save(cliente);
+			clienteBanco = clienteService.find(cliente.getCelular());
+			System.out.println(clienteBanco);
+			cliente.setId(clienteBanco.getId());
+			
 		}else {
 			cliente.setId(clienteBanco.getId());
 		}

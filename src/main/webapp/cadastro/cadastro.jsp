@@ -60,7 +60,7 @@
                     <div class="col-sm-7">                      </div>
                     <div class="col-sm-2">
                         <br>
-                        <button onclick="guardarCliente()" class="btn btn-default ml-auto">
+                        <button type="button" onclick="guardarCliente()" class="btn btn-default ml-auto">
                             CADASTRAR
                         </button>
                     </div>                                                                                           

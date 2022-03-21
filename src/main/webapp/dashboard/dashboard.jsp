@@ -18,7 +18,7 @@
 									      <div class="card">
 							  					<div class="card-body" >
 									      			<b>Frequência de visitas:</b> <br>
-									      			${analista.ObterFrequencia()} visitas
+									      			${analista.ObterFrequencia()} visita${analista.ObterFrequencia()>1? "s":""}
 									      		</div>
 									      	</div>
 								    </div>

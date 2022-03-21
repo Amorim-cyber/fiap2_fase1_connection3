@@ -120,7 +120,20 @@ function atualizarBebida(){
 	
 	document.getElementById("precoBebida").
 	setAttribute("placeholder","R$ "+document.getElementById("listaBebidas").value.split(',')[4].replace("price=","").replace("]","").replace(".",",")+"0");
+	}else{
+		document.getElementById("nomeBebida").
+		setAttribute("placeholder","Nome Bebida");
+		
+		document.getElementById("tipoBebida").
+		setAttribute("placeholder","Tipo de Bebida");
+		
+		document.getElementById("descricaoBebida").
+		setAttribute("placeholder","Descrição da Bebida");
+		
+		document.getElementById("precoBebida").
+		setAttribute("placeholder","Preço da Bebida");
 	}
+		
 }
 		
 

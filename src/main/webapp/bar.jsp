@@ -45,7 +45,7 @@ request.setAttribute("analista",analista);
                     <div class="col-lg-5 col-sm-12 tel-pane">
                         <div class="frm-telefone">
                             <div class="form__group field">
-                                <input ${cliente != null? "readonly" : ""} value="${celular}" type="input" class="form__field" placeholder="Digite o telefone" name="tel" id='tel' required />
+                                <input ${cliente != null? "readonly" : ""} value="${cliente != null?celular:''}" type="input" class="form__field" placeholder="Digite o telefone" name="tel" id='tel' required />
                                 <label for="tel" class="form__label">Digite o telefone</label>
                             </div>
                             
@@ -81,6 +81,7 @@ request.setAttribute("analista",analista);
 	<script>
         $(function() {
             $('#tel').mask('(00)00000-0000');
+            $('#celular').mask('(00)00000-0000');
             $('#cpf').mask('000.000.000-00');
         });
     </script>
